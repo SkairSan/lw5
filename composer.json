@@ -1,0 +1,27 @@
+{
+    "name": "skairsan/pizza-store-lib",
+    "description": "A PizzaStore library with Pizza and PizzaStore classes.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "PizzaStoreLib\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.12",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "scripts": {
+        "phpstan": "phpstan analyse src",
+        "cs": "phpcs --standard=phpcs.xml src"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SkairSan"
+        }
+    ]
+}
