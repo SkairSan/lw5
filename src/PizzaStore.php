@@ -2,28 +2,14 @@
 
 namespace PizzaStoreLib;
 
-class PizzaStore
+abstract class PizzaStore
 {
-    public function orderPizza(string $type): Pizza
+    public function orderPizza(string $type): void
     {
         $pizza = $this->createPizza($type);
         $pizza->prepare();
         $pizza->cut();
-
-        return $pizza;
     }
 
-    protected function createPizza(string $type): Pizza
-    {
-        switch (mb_strtolower($type)) {
-            case 'margherita':
-                return new MargheritaPizza();
-            case 'pepperoni':
-                return new PepperoniPizza();
-            case 'veggie':
-                return new VeggiePizza();
-            default:
-                throw new \InvalidArgumentException("Неизвестный тип пиццы: {$type}");
-        }
-    }
+    protected abstract function createPizza(string $type): Pizza;
 }
